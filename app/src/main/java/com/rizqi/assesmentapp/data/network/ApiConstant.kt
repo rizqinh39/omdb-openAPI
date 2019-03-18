@@ -1,4 +1,4 @@
-
+package com.rizqi.assesmentapp.data.network
 
 object ApiConstant {
 
@@ -7,5 +7,5 @@ object ApiConstant {
 
 
     //Parameter
-    const val SEARCH = "/s"
+    const val ALL = "/"
 }

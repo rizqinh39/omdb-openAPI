@@ -1,21 +1,27 @@
 package com.rizqi.assesmentapp.data.network
 
 
-import ApiConstant
+import com.rizqi.assesmentapp.data.response.MovieDetailResponse
 import com.rizqi.assesmentapp.data.response.SearchResponse
 import io.reactivex.Single
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RestService {
 
-    @FormUrlEncoded
-    @POST(ApiConstant.SEARCH)
+    @GET(ApiConstant.ALL)
     fun searchMovies(
-        @Field("apikey") apiKey: String,
-        @Field("s") keyword: String
+            @Query("apikey") apiKey: String,
+            @Query("s") keyword: String,
+            @Query("page") page: Int
     ): Single<SearchResponse>
+
+
+    @GET(ApiConstant.ALL)
+    fun searchMoviesDetail(
+            @Query("apikey") apiKey: String,
+            @Query("i") idMovies: String,
+            @Query("plot") page: String
+    ): Single<MovieDetailResponse>
 
 
 }

@@ -13,7 +13,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun initActivity() {
-        /*HomeActivity.navigate(this)
-        finish()*/
+        HomeActivity.navigate(this)
+        finish()
     }
 }

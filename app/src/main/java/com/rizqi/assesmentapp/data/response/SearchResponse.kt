@@ -1,6 +1,8 @@
 package com.rizqi.assesmentapp.data.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class SearchResponse(
         @SerializedName("Response")
@@ -8,8 +10,11 @@ data class SearchResponse(
         @SerializedName("Search")
         val search: List<Search?>?,
         @SerializedName("totalResults")
-        val totalResults: String?
+        val totalResults: String?,
+        @SerializedName("Error")
+        val Error: String?
 ) {
+    @Parcelize
     data class Search(
             @SerializedName("Poster")
             val poster: String?,
@@ -21,5 +26,5 @@ data class SearchResponse(
             val year: String?,
             @SerializedName("imdbID")
             val imdbID: String?
-    )
+    ) : Parcelable
 }
