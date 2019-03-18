@@ -1,6 +1,7 @@
 package com.rizqi.assesmentapp.ui.fragment
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.SearchView
@@ -174,6 +175,7 @@ class HomeFragment: BaseFragment(), SearchListView, RecyclerOnClickListener {
             mPresenter?.getSearchResult(AppConstant.PARAM_KEY, query, mPageScroll)
         }else{
             refreshData()
+            swipeRefreshLayout.isRefreshing = false
             tv_no_data.visibility =View.VISIBLE
             tv_no_data.text = getString(R.string.noresult)
         }
